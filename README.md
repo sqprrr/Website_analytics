@@ -11,24 +11,8 @@ This tool is useful for marketing analytics to detect new product interactions b
 ## Features
 
 - Efficiently parses large CSV files containing user activity.  
-- Uses `Dictionary` and `HashSet` to track users and their visited products.  
-- Identifies users who visited **new pages on the second day**.  
-- Outputs results directly to the console.  
-
-## CSV File Format
-
-Each CSV file should have the following structure: user_id,product_id,timestamp
-
-- `user_id` — identifier of the user  
-- `product_id` — identifier of the product page visited  
-- `timestamp` — optional timestamp of the visit  
-- Duplicates are allowed; they are automatically ignored by the program.
-
-Example:
-1,101,2025-09-01T12:00
-2,102,2025-09-01T12:05
-1,103,2025-09-01T12:10
-
+- Uses `Dictionary` and `HashSet` to track users and their visited products.
+  
 
 ## Getting Started
 
@@ -70,14 +54,6 @@ Check if the user exists on the first day
 Compute newPages = day2[user] - day1[user]
 
 If newPages is not empty, output user_id
-
-Efficiency:
-
-Time Complexity: O(n + m), where n and m are the number of records in the first and second CSV files.
-
-Memory Complexity: O(U × P), where U is the number of unique users and P is the average number of products per user.
-
-Uses hash sets to eliminate duplicates and allow constant-time lookups.
 
 License
 
